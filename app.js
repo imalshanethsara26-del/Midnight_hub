@@ -221,7 +221,7 @@ async function sendToBot() {
     showToast('Sent to WhatsApp successfully.', 'success');
     closeOverlay('videoModal');
   } catch (error) {
-    showToast(error.message || 'Could not reach the WhatsApp bot. Check the endpoint and try again.');
+    showToast('Could not send to WhatsApp. The server may be unavailable. Please try again.', 'error');
     button.disabled = false;
     button.querySelector('span').textContent = original;
   }
